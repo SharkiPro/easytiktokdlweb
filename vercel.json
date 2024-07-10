@@ -1,0 +1,20 @@
+{
+  "version": 2,
+  "builds": [
+    {
+      "src": "pages/api/download.js",
+      "use": "@vercel/node"
+    }
+  ],
+  "functions": {
+    "pages/api/download.js": {
+      "memory": 1024,
+      "maxDuration": 30,
+      "runtime": "nodejs16.x"
+    }
+  },
+  "env": {
+    "PUPPETEER_SKIP_CHROMIUM_DOWNLOAD": "true",
+    "PUPPETEER_EXECUTABLE_PATH": "/usr/bin/chromium-browser"
+  }
+}
